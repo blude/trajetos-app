@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('about', 'PagesController@about');
+
 Route::get('trip', function() {
     $trip_id = Request::input('trip_id');
     return view('trip', compact('trip_id'));
