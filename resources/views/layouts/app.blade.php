@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="/css/vendor/normalize.css">
     <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
 </head>
-<body>
-    @yield('main')
+<body class="Page">
+    <div class="Container">
+        @yield('main')
+    </div>
 </body>
 </html>
