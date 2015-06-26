@@ -6,8 +6,7 @@
     <h2>Viagens:</h2>
     <ul>
         @foreach ($trips as $trip)
-            <li><a href="{{ url('/trips', $trip->id) }}">{{ $routes->where('id', $trip->route_id)->first()->number }}
- - {{ $trip->name }}</a></li>
+            <li><a href="{{ url('/trips', $trip->id) }}">{{ $trip->route_id }} - {{ $trip->name }}</a></li>
         @endforeach
     </ul>
     <p>De Vitória para o mundo.</p>

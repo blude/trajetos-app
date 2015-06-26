@@ -12,7 +12,8 @@
 */
 
 Route::get('/', 'PagesController@home');
-
 Route::get('about', 'PagesController@about');
-
+Route::get('trips', 'TripsController@index');
+Route::get('trips/create', 'TripsController@create');
 Route::get('trips/{id}', 'TripsController@show');
+Route::post('trips', 'TripsController@store');
