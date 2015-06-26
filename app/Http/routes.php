@@ -15,6 +15,4 @@ Route::get('/', 'PagesController@home');
 
 Route::get('about', 'PagesController@about');
 
-Route::get('trips/{id}', function($id) {
-    return view('trip', compact('id'));
-});
+Route::get('trips/{id}', 'TripsController@show');
