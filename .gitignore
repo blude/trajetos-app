@@ -4,3 +4,4 @@
 .env
 .DS_Store
 Thumbs.db
+*.sublime-workspace
