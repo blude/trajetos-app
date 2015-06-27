@@ -1,6 +1,6 @@
 @extends("layouts.app")
 
-@section('main')
+@section('content')
     <p><a href="/" rel="back">&larr; Trajetos</a></p>
     <h1>Sobre</h1>
     <p>Este web app faz parte da pesquisa realizada para o Projeto de Graduação para conclusão do curso de Desenho Industrial da Universidade Federal do Espírito Santo (Ufes).</p>

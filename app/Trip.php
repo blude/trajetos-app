@@ -6,12 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Trip extends Model
 {
+
     protected $fillable = [
         'name',
         'route_id'
     ];
 
+    /**
+     * A trip is part of a route.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function route() {
-        $this->belongsTo('App\Route');
+        return $this->belongsTo('App\Route');
     }
+
 }

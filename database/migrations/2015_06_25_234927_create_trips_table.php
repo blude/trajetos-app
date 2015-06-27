@@ -16,7 +16,10 @@ class CreateTripsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('route_id')->unsigned();
-            $table->foreign('route_id')->references('id')->on('routes');
+            $table->foreign('route_id')
+                ->references('id')
+                ->on('routes')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

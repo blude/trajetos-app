@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('main')
+@section('content')
     <h1>Viagens</h1>
     <ul>
         @foreach($trips as $trip)
-            <li>{{ $trip->route_id }} - {{ $trip->name }}</li>
+            <li>{{ $trip->route->number }} - {{ $trip->name }}</li>
         @endforeach
     </ul>
     <ul>
