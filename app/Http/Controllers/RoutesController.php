@@ -35,11 +35,10 @@ class RoutesController extends Controller
     /**
      * Show a single route.
      *
+     * @param Route $route
      * @return Response
      */
-    public function show($id) {
-        $route = Route::findOrFail($id);
-
+    public function show(Route $route) {
         return view('routes.show', compact('route'));
     }
 
@@ -67,25 +66,21 @@ class RoutesController extends Controller
     /**
      * Edit a route.
      *
-     * @param $id
+     * @param Route $route
      * @return Response
      */
-    public function edit($id) {
-        $route = Route::findOrFail($id);
-
+    public function edit(Route $route) {
         return view('routes.edit', compact('route'));
     }
 
     /**
      * Update an edited route.
      *
-     * @param $id
+     * @param Route $route
      * @param RouteRequest $request
      * @return Response
      */
-    public function update($id, RouteRequest $request) {
-        $route = Route::findOrFail($id);
-
+    public function update(Route $route, RouteRequest $request) {
         $route->update($request->all());
 
         return redirect('routes');

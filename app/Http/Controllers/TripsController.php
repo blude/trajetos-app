@@ -35,11 +35,10 @@ class TripsController extends Controller
     /**
      * Show a single trip.
      *
+     * @param Trip $trip
      * @return Response
      */
-    public function show($id) {
-        $trip = Trip::findOrFail($id);
-
+    public function show(Trip $trip) {
         return view('trips.show', compact('trip'));
     }
 
@@ -67,25 +66,21 @@ class TripsController extends Controller
     /**
      * Edit a trip.
      *
-     * @param $id
+     * @param Trip $trip
      * @return Response
      */
-    public function edit($id) {
-        $trip = Trip::findOrFail($id);
-
+    public function edit(Trip $trip) {
         return view('trips.edit', compact('trip'));
     }
 
     /**
      * Update an edited trip.
      *
-     * @param $id
+     * @param Trip $trip
      * @param TripRequest $request
      * @return Response
      */
-    public function update($id, TripRequest $request) {
-        $trip = Trip::findOrFail($id);
-
+    public function update(Trip $trip, TripRequest $request) {
         $trip->update($request->all());
 
         return redirect('trips');
