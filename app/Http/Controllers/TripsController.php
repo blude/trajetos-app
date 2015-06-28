@@ -60,7 +60,10 @@ class TripsController extends Controller
     public function store(TripRequest $request) {
         Trip::create($request->all());
 
-        return redirect('trips');
+        return redirect('trips')->with([
+            'flash_message' => 'Viagem adicionada',
+            'flash_message_level' => 'success'
+        ]);
     }
 
     /**

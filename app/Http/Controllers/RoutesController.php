@@ -60,7 +60,10 @@ class RoutesController extends Controller
     public function store(RouteRequest $request) {
         Route::create($request->all());
 
-        return redirect('routes');
+        return redirect('routes')->with([
+            'flash_message' => 'Linha adicionada',
+            'flash_message_level' => 'success'
+        ]);
     }
 
     /**

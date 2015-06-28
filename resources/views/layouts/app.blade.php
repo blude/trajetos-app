@@ -6,10 +6,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Trajetos</title>
-    <link rel="stylesheet" href="/css/vendor/normalize.css">
-    <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
+    <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
 </head>
 <body class="Page">
+    @include('partials.flash')
     <div class="Container">
         @yield('content')
     </div>
