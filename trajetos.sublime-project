@@ -5,7 +5,7 @@
             "name": "Trajetos",
             "follow_symlinks": true,
             "path": ".",
-            "folder_exclude_patterns": ["vendor", "node_modules", "bower_components"],
+            "folder_exclude_patterns": ["node_modules", "bower_components"],
             "file_exclude_patterns": ["*.lock", "*.sublime-workspace"]
         }
     ],
