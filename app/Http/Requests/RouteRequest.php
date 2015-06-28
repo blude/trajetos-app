@@ -25,7 +25,7 @@ class RouteRequest extends Request
     {
         return [
             'name' => 'required|string|max:50',
-            'number' => 'required|alpha_num|max:5'
+            'number' => 'required|alpha_num|unique:routes|max:5'
         ];
     }
 }
