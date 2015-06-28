@@ -7,6 +7,11 @@
     <meta name="author" content="">
     <title>Admin Trajetos</title>
     <link rel="stylesheet" href="/css/vendor/bootstrap.css">
+    <style>
+        body {
+            padding: 40px 0;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
