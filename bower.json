@@ -3,6 +3,7 @@
   "dependencies": {
     "normalize-css": "~3.0.3",
     "turf": "~2.0.2",
-    "vue": "~0.12.1"
+    "vue": "~0.12.1",
+    "bootstrap": "~3.3.5"
   }
 }
