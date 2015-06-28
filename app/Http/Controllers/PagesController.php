@@ -11,17 +11,22 @@ use App\Http\Controllers\Controller;
 
 class PagesController extends Controller
 {
-    function home() {
+    public function home() {
         $trips = Trip::all();
         $routes = Route::all();
 
         return view('home', compact('trips', 'routes'));
     }
 
-    function about() {
+    public function about() {
         $author = 'Saulo Pratti';
         $teacher = 'Mauro Pinheiro';
 
         return view('pages.about', compact('author', 'teacher'));
     }
+
+    public function settings() {
+        return view('pages.settings');
+    }
+
 }
