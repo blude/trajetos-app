@@ -13,6 +13,15 @@ class RoutesController extends Controller
 {
 
     /**
+     * Create a new authentication controller instance.
+     *
+     * @return void
+     */
+    public function __construct() {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
+    /**
      * Show all routes.
      *
      * @return Response

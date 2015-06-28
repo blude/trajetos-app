@@ -13,6 +13,15 @@ class TripsController extends Controller
 {
 
     /**
+     * Create a new authentication controller instance.
+     *
+     * @return void
+     */
+    public function __construct() {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
+    /**
      * Show all trips.
      *
      * @return Response
