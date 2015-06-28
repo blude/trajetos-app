@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.less","app.css"],"names":[],"mappings":"AAAA;EACI,qBAAA;EACA,gBAAA;ECCH","file":"app.css","sourcesContent":["body {\n    background: rgb(240, 240, 225);\n    color: rgb(144, 144, 127);\n}",null],"sourceRoot":"/source/"}
+{"version":3,"sources":["app.css","app.less"],"names":[],"mappings":"AAAA,cAAa;ACEb;EACI,qBAAA;EACA,gBAAA;EDAH","file":"app.css","sourcesContent":[null,"/* app.css */\n\nbody {\n    background: rgb(240, 240, 225);\n    color: rgb(144, 144, 127);\n}"],"sourceRoot":"/source/"}
