@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTripsTable extends Migration
+class CreatePointTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,9 @@ class CreateTripsTable extends Migration
      */
     public function up()
     {
-        Schema::create('trips', function (Blueprint $table) {
+        Schema::create('point_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->integer('route_id')->unsigned();
-            $table->foreign('route_id')->references('id')->on('routes')->onDelete('cascade');
+            $table->string('label');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ class CreateTripsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('trips');
+        Schema::drop('point_types');
     }
 }

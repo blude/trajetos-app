@@ -21,4 +21,13 @@ class Trip extends Model
         return $this->belongsTo('App\Route');
     }
 
+    /**
+     * Get the points associated with the given trip.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function points() {
+        return $this->belongsToMany('App\Point')->withTimestamps();
+    }
+
 }
