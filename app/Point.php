@@ -12,7 +12,7 @@ class Point extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function type() {
+    public function point_type() {
         return $this->belongsTo('App\PointType');
     }
 
