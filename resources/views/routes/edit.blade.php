@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Editar: {{ $route->number }} -  {{ $route->name }}</h1>
+    <h1>Editar: {{ $route->fullName() }}</h1>
 
     @include('errors._list')
 

@@ -12,6 +12,14 @@ class Route extends Model
         'name'
     ];
 
+    /**
+    * Return the full name of the route, including it's number.
+    *
+    * @return string
+    */
+    public function fullName() {
+        return $this->number . ' - ' . $this->name;
+    }
 
     /**
      * A route can have many trips.

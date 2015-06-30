@@ -4,7 +4,7 @@
     <h1>Viagens</h1>
     <ul>
         @foreach($trips as $trip)
-            <li><a href="{{ route('trips.show', $trip->id) }}">{{ $trip->route->number }} - {{ $trip->name }}</a> ({!! link_to_route('trips.edit', 'editar', $trip->id) !!})</li>
+            <li>{!! link_to_route('trips.edit', $trip->fullName(), $trip->id) !!}</li>
         @endforeach
     </ul>
     <ul>

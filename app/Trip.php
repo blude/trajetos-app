@@ -13,6 +13,15 @@ class Trip extends Model
     ];
 
     /**
+    * Return the full name of the trip, including it's route number.
+    *
+    * @return string
+    */
+    public function fullName() {
+        return $this->route->number . ' - ' . $this->name;
+    }
+
+    /**
      * A trip is part of a route.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

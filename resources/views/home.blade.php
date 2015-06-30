@@ -7,7 +7,7 @@
 
     <ul>
         @forelse ($routes as $route)
-            <li><a href="{{ url('/routes', $route->id) }}">{{ $route->number }} - {{ $route->name }}</a></li>
+            <li>{!! link_to_route('routes.edit', $route->fullName(), $route->id) !!}</a></li>
         @empty
             <li>Nenhuma linha disponível.</li>
         @endforelse
@@ -15,7 +15,7 @@
     <h2>Viagens:</h2>
     <ul>
         @forelse ($trips as $trip)
-            <li><a href="{{ url('/trips', $trip->id) }}">{{ $trip->route->number }} - {{ $trip->name }}</a></li>
+            <li>{!! link_to_route('trips.show', $trip->fullName(), $trip->id) !!}</li>
         @empty
             <li>Nenhuma viagem disponível.</li>
         @endforelse

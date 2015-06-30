@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Editar: {{ $trip->route->number }} - {{ $trip->name }}</h1>
+    <h1>Editar: {{ $trip->fullName() }}</h1>
 
     @include('errors._list')
 
