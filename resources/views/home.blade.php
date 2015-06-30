@@ -17,7 +17,7 @@
         @forelse ($trips as $trip)
             <li><a href="{{ url('/trips', $trip->id) }}">{{ $trip->route->number }} - {{ $trip->name }}</a></li>
         @empty
-            <p>Nenhuma viagem disponível.</p>
+            <li>Nenhuma viagem disponível.</li>
         @endforelse
     </ul
     <p>De Vitória para o mundo.</p>
