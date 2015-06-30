@@ -3,11 +3,15 @@
 @section('content')
     <h1>Editar: {{ $route->number }} -  {{ $route->name }}</h1>
 
+    @include('errors._list')
+
     {!! Form::model($route, ['method' => 'PATCH', 'action' => ['RoutesController@update', $route->id]]) !!}
         @include('routes._form', ['submitButtonText' => 'Atualizar Linha'])
     {!! Form::close() !!}
 
-    @include('errors._list')
+    {!! Form::model($route, ['method' => 'DELETE', 'action' => ['RoutesController@destroy', $route->id]]) !!}
+        {!! Form::submit('Remover', ['class' => 'Btn Btn--danger']) !!}
+    {!! Form::close() !!}
 
     <p><a href="/">&larr; Voltar</a></p>
 @stop

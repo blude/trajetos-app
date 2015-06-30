@@ -89,4 +89,18 @@ class RoutesController extends Controller
         return redirect('routes');
     }
 
+    /**
+     * Delete a given route and redirect with a flash message.
+     *
+     * @param Route $route
+     */
+    public function destroy(Route $route) {
+        $route->delete();
+
+        return redirect('routes')->with([
+            'flash_message' => 'Linha deletada.',
+            'flash_message_level' => 'success'
+        ]);
+    }
+
 }

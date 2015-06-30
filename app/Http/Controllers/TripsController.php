@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Trip;
+use Redirect;
 use App\Http\Requests\TripRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -89,10 +90,15 @@ class TripsController extends Controller
         return redirect('trips');
     }
 
+    /**
+     * Delete a given trip and redirect with a flash message.
+     *
+     * @param Trip $trip
+     */
     public function destroy(Trip $trip) {
-        Trip::destroy($trip);
+        $trip->delete();
 
-        return Redirect::back()->with([
+        return redirect('trips')->with([
             'flash_message' => 'Viagem deletada.',
             'flash_message_level' => 'success'
         ]);
