@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Admin Trajetos</title>
-    <link rel="stylesheet" href="/css/vendor/bootstrap.css">
+    <link rel="stylesheet" href="{{ asset('css/vendor/bootstrap.css') }}">
     <style>
         body {
             padding: 40px 0;
