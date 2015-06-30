@@ -89,4 +89,13 @@ class TripsController extends Controller
         return redirect('trips');
     }
 
+    public function destroy(Trip $trip) {
+        Trip::destroy($trip);
+
+        return Redirect::back()->with([
+            'flash_message' => 'Viagem deletada.',
+            'flash_message_level' => 'success'
+        ]);
+    }
+
 }
