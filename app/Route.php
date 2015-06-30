@@ -30,4 +30,17 @@ class Route extends Model
         return $this->hasMany('App\Trip');
     }
 
+    /**
+     * Delete related trips when deleting a given route.
+     *
+     * @return void
+     */
+    public static function boot() {
+        parent::boot();
+
+        static::deleted(function($route) {
+            $route->trips()->delete();
+        });
+    }
+
 }
