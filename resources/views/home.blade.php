@@ -12,10 +12,10 @@
             @endforeach
         </ul>
     @else
-        <p>Nenhuma linha disponível. {!! link_to_route('routes.create', 'Adicionar Nova Linha') !!}</p>
+        <p>Nenhuma linha disponível. {!! link_to_route('routes.create', 'Adicionar linha') !!}</p>
     @endunless
 
-    @unless ($routes->isEmpty())
+    @unless ($trips->isEmpty())
         <h2>Viagens:</h2>
         <ul>
             @foreach ($trips as $trip)
@@ -23,7 +23,7 @@
             @endforeach
         </ul>
     @else
-        <p>Nenhuma viagem disponível. {!! link_to_route('trips.create', 'Adicionar Nova Viagem') !!}</p>
+        <p>Nenhuma viagem disponível. {!! link_to_route('trips.create', 'Adicionar viagem') !!}</p>
     @endunless
     <p>De Vitória para o mundo.</p>
 @stop
