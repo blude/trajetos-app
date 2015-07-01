@@ -1,5 +1,3 @@
-@inject ('routes', 'App\Route')
-
 <div class="Form-group">
     {!! Form::label('name', 'Nome:') !!}
     {!! Form::text('name', null, ['class' => 'Form-control']) !!}
@@ -7,11 +5,7 @@
 
 <div class="Form-group">
     {!! Form::label('route_id', 'Linha:') !!}
-    <select class="form-control" name="route_id" id="route_id">
-        @foreach ($routes->all() as $route)
-            <option value="{{ $route->id }}">{{ $route->fullName() }}</option>
-        @endforeach
-    </select>
+    {!! Form::select('route_id', $routes, null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="Form-action">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Trip;
+use App\Route;
 use Redirect;
 use App\Http\Requests\TripRequest;
 use App\Http\Requests;
@@ -49,7 +50,9 @@ class TripsController extends Controller
      * @return Response
      */
     public function create() {
-        return view('trips.create');
+        $routes = Route::lists('name', 'id');
+
+        return view('trips.create', compact('routes'));
     }
 
     /**
@@ -74,7 +77,9 @@ class TripsController extends Controller
      * @return Response
      */
     public function edit(Trip $trip) {
-        return view('trips.edit', compact('trip'));
+        $routes = Route::lists('name', 'id');
+
+        return view('trips.edit', compact('routes', 'trip'));
     }
 
     /**
