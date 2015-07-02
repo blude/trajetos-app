@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Trip;
 use App\Route;
+use App\Point;
 use App\Http\Requests\TripRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
