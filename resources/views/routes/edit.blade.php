@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Editar: {{ $route->fullName() }}</h1>
+    <h1>Editar Linha</h1>
 
     @include('errors._list')
 
@@ -10,7 +10,7 @@
     {!! Form::close() !!}
 
     {!! Form::model($route, ['method' => 'DELETE', 'action' => ['RoutesController@destroy', $route->id]]) !!}
-        {!! Form::submit('Remover', ['class' => 'Btn Btn--danger']) !!}
+        {!! Form::submit('Remover', ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 
     <p><a href="/">&larr; Voltar</a></p>

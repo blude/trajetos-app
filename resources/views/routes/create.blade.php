@@ -4,7 +4,7 @@
     <h1>Adicionar Nova Linha</h1>
 
     {!! Form::open(['url' => 'routes']) !!}
-        @include('routes._form', ['submitButtonText' => 'Adicionar Linha'])
+        @include('routes._form', ['submitButtonText' => 'Criar Linha'])
     {!! Form::close() !!}
 
     @include('errors._list')

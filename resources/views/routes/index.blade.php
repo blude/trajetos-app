@@ -4,7 +4,7 @@
     <h1>Linhas</h1>
     <ul>
         @foreach($routes as $route)
-            <li>{!! link_to_route('routes.edit', $route->fullName(), $route->id) !!}</li>
+            <li>{!! link_to_route('routes.show', $route->fullName(), $route->id) !!} ({!! link_to_route('routes.edit', 'editar', $route->id) !!})</li>
         @endforeach
     </ul>
     <ul>

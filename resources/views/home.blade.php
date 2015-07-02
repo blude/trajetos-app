@@ -5,10 +5,10 @@
     <p>Veja pontos de referência, fotos, mapas, vias e nunca mais desça no ponto errado. <a href="{{ url('/about') }}">Saiba mais</a>.</p>
     
     @unless ($routes->isEmpty())
-        <h2>Linhas:</h2>
+        <h2>{!! link_to_route('routes.index', 'Linhas') !!}</h2>
         <ul>
             @foreach ($routes as $route)
-                <li>{!! link_to_route('routes.edit', $route->fullName(), $route->id) !!}</a></li>
+                <li>{!! link_to_route('routes.show', $route->fullName(), $route->id) !!}</a></li>
             @endforeach
         </ul>
     @else
@@ -16,7 +16,7 @@
     @endunless
 
     @unless ($trips->isEmpty())
-        <h2>Viagens:</h2>
+        <h2>{!! link_to_route('trips.index', 'Viagens') !!}</h2>
         <ul>
             @foreach ($trips as $trip)
                 <li>{!! link_to_route('trips.show', $trip->fullName(), $trip->id) !!}</li>
