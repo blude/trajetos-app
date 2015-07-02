@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Point extends Model
 {
 
+    protected $fillable = [
+        'lat',
+        'lon',
+        'point_type_id'
+    ];
+
     /**
      * A point has a point type.
      *

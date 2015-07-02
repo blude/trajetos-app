@@ -14,7 +14,7 @@ class TripsController extends Controller
 {
 
     /**
-     * Create a new authentication controller instance.
+     * Create a new trips controller instance.
      *
      * @return void
      */

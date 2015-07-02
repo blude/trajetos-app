@@ -3,11 +3,11 @@
 @section('content')
     <h1>Adicionar Nova Viagem</h1>
 
-    {!! Form::open(['url' => 'trips']) !!}
-        @include('trips._form', ['submitButtonText' => 'Adicionar Viagem'])
-    {!! Form::close() !!}
-
     @include('errors._list')
 
-    <p><a href="/">&larr; Voltar</a></p>
+    {!! Form::open(['url' => 'trips']) !!}
+        @include('trips._form', ['submitButtonText' => 'Criar Viagem'])
+    {!! Form::close() !!}
+
+    <p><a href="/points">&larr; Voltar</a></p>
 @stop

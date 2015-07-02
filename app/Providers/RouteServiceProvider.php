@@ -28,6 +28,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $router->model('routes', 'App\Route');
         $router->model('trips', 'App\Trip');
+        $router->model('points', 'App\Point');
     }
 
     /**

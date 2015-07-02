@@ -13,7 +13,7 @@ class RoutesController extends Controller
 {
 
     /**
-     * Create a new authentication controller instance.
+     * Create a new routes controller instance.
      *
      * @return void
      */

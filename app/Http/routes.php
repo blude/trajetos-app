@@ -18,6 +18,7 @@ Route::get('settings', 'PagesController@settings');
 
 Route::resource('routes', 'RoutesController');
 Route::resource('trips', 'TripsController');
+Route::resource('points', 'PointsController');
 
 /*
 |--------------------------------------------------------------------------
