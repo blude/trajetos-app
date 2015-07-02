@@ -10,9 +10,13 @@
     <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
 </head>
 <body>
+    @include('partials.navigation')
     <div class="container">
         @include('partials.flash')
         @yield('content')
     </div>
+    <footer class="text-center" role="contentinfo">
+        <p class="text-muted">Trajetos - Feito com &lt;3 em Vitória</p>
+    </footer>
 </body>
 </html>
