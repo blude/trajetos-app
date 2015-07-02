@@ -18,5 +18,7 @@
     <footer class="text-center" role="contentinfo">
         <p class="text-muted">Trajetos - Feito com &lt;3 em Vitória</p>
     </footer>
+    <script src="{{ asset('assets/js/vendor/jquery.js') }}"></script>
+    <script src="{{ asset('assets/js/vendor/bootstrap.js') }}"></script>
 </body>
 </html>
