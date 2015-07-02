@@ -1,13 +1,13 @@
-<div class="Form-group">
+<div class="form-group">
     {!! Form::label('name', 'Nome:') !!}
-    {!! Form::text('name', null, ['class' => 'Form-control']) !!}
+    {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
-<div class="Form-group">
+<div class="form-group">
     {!! Form::label('route_id', 'Linha:') !!}
     {!! Form::select('route_id', $routes, null, ['class' => 'form-control']) !!}
 </div>
 
-<div class="Form-action">
-    {!! Form::submit($submitButtonText, ['class' => 'Btn Btn--primary']) !!}
+<div class="form-action">
+    {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary']) !!}
 </div>

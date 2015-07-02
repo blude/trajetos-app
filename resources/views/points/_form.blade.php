@@ -1,5 +1,5 @@
 <div class="form-group">
-    {!! Form::label('trip_list', 'Viagem:') !!}
+    {!! Form::label('trip_list', 'Viagem(s):') !!}
     {!! Form::select('trip_list[]', $trips, null, ['class' => 'form-control', 'multiple']) !!}
 </div>
 
@@ -19,5 +19,5 @@
 </div>
 
 <div class="form-action">
-    {!! Form::submit($submitButtonText, ['class' => 'Btn Btn--primary']) !!}
+    {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary']) !!}
 </div>

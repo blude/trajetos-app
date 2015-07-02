@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-    <h1>Adicionar Nova Viagem</h1>
+    <h1>Criar Viagem</h1>
 
     @include('errors._list')
 

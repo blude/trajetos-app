@@ -15,13 +15,15 @@ var bowerDir = 'vendor/bower_components/';
 
 elixir(function(mix) {
 
-    mix.less('app.less')
-    .copy(bowerDir + 'normalize-css/normalize.css', 'public/css/vendor/normalize.css')
-    .copy(bowerDir + 'bootstrap/dist/css/bootstrap.css', 'public/css/vendor/bootstrap.css');
+    mix.less('app.less', 'public/assets/css/app.css')
+    .copy(bowerDir + 'normalize-css/normalize.css', 'public/assets/css/vendor/normalize.css')
+    .copy(bowerDir + 'bootstrap/dist/css/bootstrap.css', 'public/assets/css/vendor/bootstrap.css');
+
+    mix.less('admin.less', 'public/assets/css/admin.css');
 
     mix.styles([
         'vendor/normalize.css', 'app.css'
-    ], null, 'public/css');
+    ], 'public/assets/css/all.css', 'public/assets/css');
 
-    mix.version('public/css/all.css');  
+    mix.version('public/assets/css/all.css');  
 });

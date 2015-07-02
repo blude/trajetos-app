@@ -1,21 +1,40 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
     <h1>Ponto #{{ $point->id }}</h1>
     <h2>Linhas</h2>
-    <ul>
-        @foreach ($point->trips as $trip)
-            <li>{{ $trip->fullName() }}</li>
-        @endforeach
-    </ul>
-    <h2>Detalhes ({!! link_to_route('points.edit', 'Editar', $point->id) !!})</h2>
-    <dl>
-        <dt>Latitute</dt>
-        <dd>{{ $point->lat }}</dd>
-        <dt>Longitude</dt>
-        <dd>{{ $point->lon }}</dd>
-        <dt>Tipo</dt>
-        <dd>{{ $point->point_type->label }}</dd>
-    </dl>
+    @unless ($point->trips->isEmpty())
+        <ul>
+            @foreach ($point->trips->all() as $trip)
+                <li>{{ $trip->fullName() }}</li>
+            @endforeach
+        </ul>
+    @else
+        <p class="text-muted">Nenhuma linha cadastrada.</p>
+    @endunless
+
+    <table class="table table-striped">
+        <thead>
+            <tr>                
+                <th>ID</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Tipo</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-point-id="{{ $point->id }}">
+                <td>{{ $point->id }}</td>
+                <td>{{ $point->lat }}</td>
+                <td>{{ $point->lon }}</td>
+                <td>{{ $point->point_type->label }}</td>
+                <td>
+                    {!! link_to_route('points.show', 'ver', $point->id) !!} - 
+                    {!! link_to_route('points.edit', 'editar', $point->id) !!}
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <p><a href="{{ route('points.index') }}">&larr; Voltar</a></p>
 @stop

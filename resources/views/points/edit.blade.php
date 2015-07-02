@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
     <h1>Editar Ponto</h1>
@@ -10,7 +10,7 @@
     {!! Form::close() !!}
 
     {!! Form::model($point, ['method' => 'DELETE', 'action' => ['PointsController@destroy', $point->id]]) !!}
-        {!! Form::submit('Remover', ['class' => 'Btn Btn--danger']) !!}
+        {!! Form::submit('Remover', ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 
     <p><a href="/points">&larr; Voltar</a></p>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
     <h1>Editar Linha</h1>
@@ -13,5 +13,5 @@
         {!! Form::submit('Remover', ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 
-    <p><a href="/">&larr; Voltar</a></p>
+    <p><a href="{{ route('routes.index') }}">&larr; Voltar</a></p>
 @stop

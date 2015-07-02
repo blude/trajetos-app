@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
     <h1>Linhas</h1>
@@ -8,7 +8,7 @@
         @endforeach
     </ul>
     <ul>
-        <li><a href="{{ route('routes.create') }}">Nova Linha</a></li>
+        <li><a href="{{ route('routes.create') }}">Criar Linha</a></li>
         <li><a href="{{ action('PagesController@home') }}">&larr; Voltar</a></li>
     </ul>
 @stop
