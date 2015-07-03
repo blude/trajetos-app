@@ -16,9 +16,9 @@
                 <li><a href="{{ route('points.index') }}">Pontos <span class="sr-only">(atual)</span></a></li>
                 <li><a href="{{ url('settings') }}">Configurações</a></li>
             </ul>
-            @if (Auth::check())
+            @if (auth()->check())
                 <div class="navbar-right">
-                    <p class="navbar-text">Olá, {{ Auth::user()->name }}</p>
+                    <p class="navbar-text">Olá, {{ auth()->user()->name }}</p>
                     <ul class="nav navbar-nav">
                         <li><a href="{{ action('Auth\AuthController@getLogout') }}" class="navbar-link">Sair</a></li>
                     </ul>
