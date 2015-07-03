@@ -9,9 +9,9 @@
         @include('points._form', ['submitButtonText' => 'Atualizar Ponto'])
     {!! Form::close() !!}
 
-    {!! Form::model($point, ['method' => 'DELETE', 'action' => ['PointsController@destroy', $point->id]]) !!}
+    {!! Form::open(['method' => 'DELETE', 'action' => ['PointsController@destroy', $point->id]]) !!}
         {!! Form::submit('Remover', ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 
-    <p><a href="/points">&larr; Voltar</a></p>
+    <p><a href="{{ route('points.index') }}">&larr; Voltar</a></p>
 @stop

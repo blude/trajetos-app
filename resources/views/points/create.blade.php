@@ -9,5 +9,5 @@
         @include('points._form', ['submitButtonText' => 'Criar Ponto'])
     {!! Form::close() !!}
 
-    <p><a href="{{ url('/') }}">Início</a></p>
+    <p><a href="{{ route('points.index') }}">&larr; Voltar</a></p>
 @stop

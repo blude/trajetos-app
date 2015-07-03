@@ -9,7 +9,7 @@
         @include('routes._form', ['submitButtonText' => 'Atualizar Linha'])
     {!! Form::close() !!}
 
-    {!! Form::model($route, ['method' => 'DELETE', 'action' => ['RoutesController@destroy', $route->id]]) !!}
+    {!! Form::open(['method' => 'DELETE', 'action' => ['RoutesController@destroy', $route->id]]) !!}
         {!! Form::submit('Remover', ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 
