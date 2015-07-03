@@ -10,16 +10,17 @@
     <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
 </head>
 <body>
-    @include('partials.navigation')
+    @include ('partials.navigation')
     <div class="container">
-        @include('partials.flash')
-        @yield('content')
+        @include ('partials.flash')
+        @yield ('content')
+        @yield ('sidebar')
     </div>
     <footer class="text-center" role="contentinfo">
         <p class="text-muted">Trajetos - Feito com &lt;3 em Vitória</p>
     </footer>
     <script src="{{ asset('assets/js/vendor/jquery.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/bootstrap.js') }}"></script>
-    @yield('scripts')
+    @yield ('scripts')
 </body>
 </html>
