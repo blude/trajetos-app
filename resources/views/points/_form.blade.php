@@ -1,6 +1,6 @@
 <div class="form-group">
     {!! Form::label('trip_list', 'Viagem(s):') !!}
-    {!! Form::select('trip_list[]', $trips, null, ['class' => 'form-control', 'multiple']) !!}
+    {!! Form::select('trip_list[]', $trips, null, ['class' => 'form-control', 'id' => 'trip_list', 'multiple']) !!}
 </div>
 
 <div class="form-group">
@@ -21,3 +21,12 @@
 <div class="form-action">
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary']) !!}
 </div>
+
+@section ('scripts')
+<script src="{{ asset('assets/js/vendor/select2.pt-BR.js') }}"></script>
+<script>
+    $('#trip_list').select2({
+        placeholder: 'Selecione uma linha'
+    });
+</script>
+@stop
