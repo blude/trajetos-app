@@ -126,13 +126,4 @@ class PointsController extends Controller
         ]);
     }
 
-    /**
-     * Get a list of trip ids associated with the current point.
-     *
-     * @return array
-     */
-    public function getTripListAttribute()
-    {
-        return $this->trips()->lists('id');
-    }
 }

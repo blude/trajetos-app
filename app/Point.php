@@ -31,4 +31,14 @@ class Point extends Model
         return $this->belongsToMany('App\Trip')->withTimestamps();
     }
 
+    /**
+     * Get a list of trip ids associated with the current point.
+     *
+     * @return array
+     */
+    public function getTripListAttribute()
+    {
+        return $this->trips->lists('id')->all();
+    }
+
 }
