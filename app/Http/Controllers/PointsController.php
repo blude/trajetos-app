@@ -42,10 +42,6 @@ class PointsController extends Controller
      */
     public function create()
     {
-        $trips = Trip::lists('name', 'id');
-
-        $point_types = PointType::lists('label', 'id');
-
         return view('points.create', compact('trips', 'point_types'));
     }
 
@@ -85,10 +81,6 @@ class PointsController extends Controller
      */
     public function edit(Point $point)
     {
-        $trips = Trip::lists('name', 'id');
-
-        $point_types = PointType::lists('label', 'id');
-
         return view('points.edit', compact('trips', 'point_types', 'point'));
     }
 
