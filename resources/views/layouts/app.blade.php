@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Trajetos</title>
-    <link rel="stylesheet" href="{{ elixir('assets/css/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/all.css') }}">
 </head>
 <body class="Page">
     @include('partials.flash')

@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Trajetos</title>
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/admin-libs.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
 </head>
 <body>
@@ -20,5 +20,6 @@
     </footer>
     <script src="{{ asset('assets/js/vendor/jquery.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/bootstrap.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>
