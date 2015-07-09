@@ -15,7 +15,7 @@
 
 <div class="form-group">
     {!! Form::label('point_type_id', 'Tipo:') !!}
-    {!! Form::select('point_type_id', $point_types, null, ['class' => 'form-control']) !!}
+    {!! Form::select('point_type_id', $point_types, null, ['class' => 'form-control', 'id' => 'point_type_id']) !!}
 </div>
 
 <div class="form-action">
@@ -26,7 +26,13 @@
 <script src="{{ asset('assets/js/vendor/select2.pt-BR.js') }}"></script>
 <script>
     $('#trip_list').select2({
-        placeholder: 'Selecione uma linha'
+        placeholder: 'Selecione uma linha',
+        theme: 'classic'
+    });
+    $('#point_type_id').select2({
+        placeholder: 'Selecione o tipo do ponto',
+        theme: 'classic',
+        tags: true
     });
 </script>
 @stop
