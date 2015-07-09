@@ -22,6 +22,7 @@ elixir(function(mix) {
     mix
     .copy(bowerDir + 'normalize-css/normalize.css', 'public/assets/css/vendor/normalize.css')
     .copy(bowerDir + 'bootstrap/dist/css/bootstrap.css', 'public/assets/css/vendor/bootstrap.css')
+    .copy(bowerDir + 'bootstrap/dist/fonts', 'public/assets/fonts')
     .copy(bowerDir + 'select2/dist/css/select2.css', 'public/assets/css/vendor/select2.css');
 
     mix
