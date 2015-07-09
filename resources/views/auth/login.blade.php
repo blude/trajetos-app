@@ -3,7 +3,8 @@
 @section ('content')
 
     <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
+
+        <div class="col-sm-4 col-sm-offset-4">
 
             <div class="panel panel-default">
                 
@@ -13,66 +14,44 @@
 
                 <div class="panel-body">
                     
-                    <div class="row">
-                        <div class="col-sm-12">
-                            @include ('errors._list')
-                        </div>
-                    </div>
+                    @include ('errors._list')
 
-                    <form class="form-horizontal" method="POST" action="/auth/login">
-
-                        {!! csrf_field() !!}
+                    {!! Form::open(['method' => 'POST', 'action' => ['Auth\AuthController@postLogin']]) !!}
 
                         <div class="form-group">
-                            <label class="control-label col-sm-3" for="email">Email</label>
-                            <div class="col-sm-7">
-                                <input class="form-control" type="email" name="email" value="{{ old('email') }}" id="email" autofocus>
-                            </div>
+                            {!! Form::label('email', 'Email', ['class' => 'sr-only']) !!}
+                            {!! Form::email('email', old('email'), ['class' => 'form-control', 'placeholder' => 'Email', 'autofocus']) !!}
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-3" for="password">Senha</label>
-                            <div class="col-sm-7">
-                                <input class="form-control" type="password" name="password" id="password">
+                            {!! Form::label('password', 'Senha', ['class' => 'sr-only']) !!}
+                            {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Senha']) !!}
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    {!! Form::checkbox('remeber', null) !!} Lembrar de mim
+                                </label>
                             </div>
                         </div>
                         
                         <div class="form-group">
-                            <div class="col-sm-offset-3 col-sm-7">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Lembrar de mim
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <div class="col-sm-offset-3 col-sm-7">
-                                <button class="btn btn-primary btn-block" type="submit">Entrar</button>
-                            </div>
+                            {!! Form::submit('Entrar', ['class' => 'btn btn-primary btn-block btn-lg']) !!}
                         </div>
 
-                    </form>
+                    {!! Form::close() !!}
 
-                    <div class="row">
-                        <div class="col-sm-offset-3 col-sm-7">
-                            <a class="btn btn-link btn-block" href="{{ url('password/email') }}">Esqueceu a senha?</a>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-sm-offset-3 col-sm-7">
-                            <hr>
-                            <p><a class="btn btn-default btn-block" href="{{ url('auth/register') }}">Cadastrar</a></p>
-                        </div>
-                    </div>
+                    <a class="btn btn-link btn-block" href="{{ action('Auth\PasswordController@getEmail') }}">Esqueceu a senha?</a>
+                    <hr>
+                    <a class="btn btn-default btn-block" href="{{ action('Auth\AuthController@getRegister') }}">Cadastrar</a>
 
                 </div>
 
             </div>
 
         </div>
+
     </div>
 
 @stop
