@@ -49,8 +49,6 @@
                     {!! Form::close() !!}
 
                     <a class="btn btn-link btn-block" href="{{ action('Auth\PasswordController@getEmail') }}">Esqueceu a senha?</a>
-                    <hr>
-                    <a class="btn btn-default btn-block" href="{{ action('Auth\AuthController@getRegister') }}">Cadastrar</a>
 
                 </div>
 

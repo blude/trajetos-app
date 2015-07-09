@@ -31,7 +31,6 @@
         <div class="row">
             <div class="col-sm-offset-2 col-sm-6">
                 <button class="btn btn-primary" type="submit">Enviar Link para Redefinir Senha</button>
-                <a href="{{ url('/auth/login') }}" class="btn btn-link">Voltar para entrar</a>
             </div>
         </div>
 

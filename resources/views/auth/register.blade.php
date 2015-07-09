@@ -49,7 +49,6 @@
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-6">
                 <button class="btn btn-primary" type="submit">Cadastrar</button>
-                <a class="btn btn-link" href="{{ url('auth/login') }}">Voltar para entrar</a>
             </div>
         </div>
 

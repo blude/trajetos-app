@@ -27,6 +27,7 @@
                 <div class="navbar-right">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{{ action('Auth\AuthController@getLogin') }}" class="navbar-link">Entrar</a></li>
+                        <li><a href="{{ action('Auth\AuthController@getRegister') }}" class="navbar-link">Cadastrar</a></li>
                     </ul>
                 </div>
             @endif
