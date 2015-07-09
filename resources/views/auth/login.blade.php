@@ -20,12 +20,18 @@
 
                         <div class="form-group">
                             {!! Form::label('email', 'Email', ['class' => 'sr-only']) !!}
-                            {!! Form::email('email', old('email'), ['class' => 'form-control', 'placeholder' => 'Email', 'autofocus']) !!}
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></span>
+                                {!! Form::email('email', old('email'), ['class' => 'form-control', 'placeholder' => 'Email', 'autofocus']) !!}
+                            </div>
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('password', 'Senha', ['class' => 'sr-only']) !!}
-                            {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Senha']) !!}
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
+                                {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Senha']) !!}
+                            </div>
                         </div>
                         
                         <div class="form-group">
