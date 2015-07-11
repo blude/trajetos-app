@@ -10,18 +10,18 @@
             </tr>
         </thead>
         <tbody>
-        @unless ($route->trips->isEmpty())
-            @foreach ($route->trips->all() as $trip)
+            @unless ($route->trips->isEmpty())
+                @foreach ($route->trips->all() as $trip)
+                    <tr>
+                        <td>{{ $trip->id }}</td>
+                        <td>{!! link_to_route('trips.show', $trip->fullName(), $trip->id) !!}</td>
+                    </tr>
+                @endforeach
+            @else
                 <tr>
-                    <td>{{ $trip->id }}</td>
-                    <td>{!! link_to_route('trips.show', $trip->fullName(), $trip->id) !!}</td>
+                    <td class="text-muted" colspan="2">Nenhuma linha cadastrada.</td>
                 </tr>
-            @endforeach
-        @else
-            <tr>
-                <td class="text-muted" colspan="2">Nenhuma linha cadastrada.</td>
-            </tr>
-        @endunless
+            @endunless
         </tbody>
     </table>
 @stop
