@@ -14,6 +14,9 @@ class CreateLandmarksTable extends Migration
     {
         Schema::create('landmarks', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->integer('landmark_category_id')->unsigned();
+            $table->foreign('landmark_category_id')->references('id')->on('landmark_categories')->onDelete('cascade');
             $table->timestamps();
         });
     }
