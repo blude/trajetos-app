@@ -6,8 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class LandmarkCategory extends Model
 {
+    /**
+     * Get the landmarks associated with the given category.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function landmarks()
     {
-        $this->hasMany('App\Landmark');
+        return $this->hasMany('App\Landmark');
     }
 }

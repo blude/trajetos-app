@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Landmark extends Model
 {
     /**
-     * Get the category for the given landmark.
+     * Get the category of the given landmark.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function landmark_category()
     {
-        $this->belongsTo('App\LandmarkCategory');
+        return $this->belongsTo('App\LandmarkCategory');
     }
 }
