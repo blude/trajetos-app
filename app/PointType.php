@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class PointType extends Model
 {
 
+    protected $fillable = [
+        'label'
+    ];
+
     /**
      * Get the points associated with the given point type.
      *
