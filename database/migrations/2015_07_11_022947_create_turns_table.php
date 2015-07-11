@@ -16,7 +16,7 @@ class CreateTurnsTable extends Migration
             $table->increments('id');
             $table->string('address');
             $table->integer('turn_direction_id')->unsigned();
-            $table->foreign('turn_direction_id')->references('id')->on('turn_directions')->onDelete('casced');
+            $table->foreign('turn_direction_id')->references('id')->on('turn_directions')->onDelete('cascade');
             $table->timestamps();
         });
     }
