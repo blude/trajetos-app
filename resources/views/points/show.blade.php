@@ -25,6 +25,9 @@
             </tr>
         </tbody>
     </table>
+@stop
+
+@section ('sidebar')
     <h2>Linhas</h2>
     @unless ($point->trips->isEmpty())
         <ul>
