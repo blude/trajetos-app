@@ -19,7 +19,7 @@
                 @endforeach
             @else
                 <tr>
-                    <td class="text-muted" colspan="2">Nenhuma linha cadastrada.</td>
+                    <td class="text-center text-muted" colspan="2">Nenhuma linha cadastrada.</td>
                 </tr>
             @endunless
         </tbody>
