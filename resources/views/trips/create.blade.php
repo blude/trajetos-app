@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1>Criar Viagem</h1>
+    <h1>Nova Viagem</h1>
 
     @include('errors._list')
 
@@ -9,5 +9,4 @@
         @include('trips._form', ['submitButtonText' => 'Criar Viagem'])
     {!! Form::close() !!}
 
-    <p><a href="/points">&larr; Voltar</a></p>
 @stop

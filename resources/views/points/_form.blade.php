@@ -27,11 +27,9 @@
 <script>
     $('#trip_list').select2({
         placeholder: 'Selecione uma linha',
-        theme: 'classic'
     });
     $('#point_type_id').select2({
         placeholder: 'Selecione o tipo do ponto',
-        theme: 'classic',
         tags: true
     });
 </script>

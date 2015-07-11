@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1>{{ $trip->fullName() }}</h1>
+    <h1>Viagem <small>{{ $trip->fullName() }}</small></h1>
     <table class="table table-striped">
         <thead>
             <tr>                
@@ -30,5 +30,4 @@
             @endunless
         </tbody>
     </table>
-    <p><a href="{{ route('trips.index') }}">&larr; Voltar</a></p>
 @stop

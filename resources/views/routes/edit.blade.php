@@ -12,6 +12,4 @@
     {!! Form::open(['method' => 'DELETE', 'action' => ['RoutesController@destroy', $route->id]]) !!}
         {!! Form::submit('Remover', ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
-
-    <p><a href="{{ route('routes.index') }}">&larr; Voltar</a></p>
 @stop

@@ -1,18 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1>Ponto #{{ $point->id }}</h1>
-    <h2>Linhas</h2>
-    @unless ($point->trips->isEmpty())
-        <ul>
-            @foreach ($point->trips->all() as $trip)
-                <li>{{ $trip->fullName() }}</li>
-            @endforeach
-        </ul>
-    @else
-        <p class="text-muted">Nenhuma linha cadastrada.</p>
-    @endunless
-
+    <h1>Ponto <small>#{{ $point->id }}</small></h1>
     <table class="table table-striped">
         <thead>
             <tr>                
@@ -36,5 +25,14 @@
             </tr>
         </tbody>
     </table>
-    <p><a href="{{ route('points.index') }}">&larr; Voltar</a></p>
+    <h2>Linhas</h2>
+    @unless ($point->trips->isEmpty())
+        <ul>
+            @foreach ($point->trips->all() as $trip)
+                <li>{{ $trip->fullName() }}</li>
+            @endforeach
+        </ul>
+    @else
+        <p class="text-muted">Nenhuma linha cadastrada.</p>
+    @endunless
 @stop

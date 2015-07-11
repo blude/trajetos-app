@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1>Pontos</h1>
+    <h1>Pontos <a class="btn btn-primary" href="{{ route('points.create') }}">Novo</a></h1>
     <table class="table table-striped">
         <thead>
             <tr>                
@@ -30,8 +30,4 @@
             @endunless
         </tbody>
     </table>
-    <ul>
-        <li><a href="{{ route('points.create') }}">Criar Ponto</a></li>
-        <li><a href="{{ action('PagesController@home') }}">&larr; Voltar</a></li>
-    </ul>
 @stop
