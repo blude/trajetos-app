@@ -17,8 +17,8 @@
                     <tr data-route-id="{{ $route->id }}">
                         <td>{{ $route->id }}</td>
                         <td>{{ $route->number }}</td>
-                        <td>{{ $route->name }}</td>
-                        <td>{!! link_to_route('routes.show', 'ver', $route->id) !!} - {!! link_to_route('routes.edit', 'editar', $route->id) !!}</td>
+                        <td>{!! link_to_route('routes.show', $route->name, $route->id) !!}</td>
+                        <td>{!! link_to_route('routes.edit', 'editar', $route->id) !!}</td>
                     </tr>
                 @endforeach
             @else
