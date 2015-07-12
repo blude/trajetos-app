@@ -6,6 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class BusStop extends Model
 {
+
+    protected $fillable = [
+        'number',
+        'address',
+        'reference',
+        'neighborhood_id',
+        'point_id'
+    ];
+
     /**
      * Get the point of the given bus stop.
      * 
@@ -25,4 +34,5 @@ class BusStop extends Model
     {
         return $this->belongsTo('App\Neighborhood');
     }
+
 }

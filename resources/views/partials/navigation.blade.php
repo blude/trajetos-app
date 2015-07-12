@@ -14,6 +14,7 @@
                 <li><a href="{{ route('routes.index') }}">Linhas <span class="sr-only">(atual)</span></a></li>
                 <li><a href="{{ route('trips.index') }}">Viagens <span class="sr-only">(atual)</span></a></li>
                 <li><a href="{{ route('points.index') }}">Pontos <span class="sr-only">(atual)</span></a></li>
+                <li><a href="{{ route('bus_stops.index') }}">Paradas <span class="sr-only">(atual)</span></a></li>
                 <li><a href="{{ url('settings') }}">Configurações</a></li>
             </ul>
             @if (auth()->check())
