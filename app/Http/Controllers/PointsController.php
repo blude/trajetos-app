@@ -42,7 +42,7 @@ class PointsController extends Controller
      */
     public function create()
     {
-        return view('points.create', compact('trips', 'point_types'));
+        return view('points.create');
     }
 
     /**
