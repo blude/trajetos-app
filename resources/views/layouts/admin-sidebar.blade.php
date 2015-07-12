@@ -13,7 +13,14 @@
     @include ('partials.navigation')
     <div class="container">
         @include ('partials.flash')
-        @yield ('content')
+        <div class="row">
+            <div class="col-md-8">
+                @yield ('content')
+            </div>
+            <div class="col-md-4">
+                @yield ('sidebar')
+            </div>
+        </div>
     </div>
     <footer class="text-center" role="contentinfo">
         <p class="text-muted">Trajetos - Feito com &lt;3 em Vitória</p>

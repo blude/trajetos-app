@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin-sidebar')
 
 @section('content')
     <h1>Ponto <small>#{{ $point->id }}</small></h1>
