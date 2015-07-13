@@ -81,7 +81,7 @@ class PointsController extends Controller
      */
     public function edit(Point $point)
     {
-        return view('points.edit', compact('trips', 'point_types', 'point'));
+        return view('points.edit', compact('point'));
     }
 
     /**
