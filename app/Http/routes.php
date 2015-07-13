@@ -16,6 +16,8 @@ Route::get('home', 'PagesController@home');
 Route::get('about', 'PagesController@about');
 Route::get('settings', 'PagesController@settings');
 
+Route::get('trajetos/{id}', 'TrajetosController@show');
+
 Route::resource('routes', 'RoutesController');
 Route::resource('trips', 'TripsController');
 Route::resource('points', 'PointsController');
