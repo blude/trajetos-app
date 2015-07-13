@@ -20,6 +20,6 @@
             @endforeach
         </div>
     @else
-        <p>Nenhuma viagem disponível.</p>
+        <p>Nenhuma ponto cadastrado.</p>
     @endunless
 @stop
