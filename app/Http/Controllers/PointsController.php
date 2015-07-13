@@ -8,7 +8,6 @@ use App\Point;
 use App\PointType;
 use App\Trip;
 use App\Neighborhood;
-use Input;
 use App\Http\Requests\PointRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
