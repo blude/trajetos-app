@@ -5,7 +5,7 @@
 
     @include('errors._list')
 
-    {!! Form::open(['url' => 'bus_stops']) !!}
+    {!! Form::open(['action' => 'BusStopsController@store']) !!}
         @include('bus_stops._form', ['submitButtonText' => 'Criar Parada'])
     {!! Form::close() !!}
 @stop

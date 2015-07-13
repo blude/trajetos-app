@@ -14,7 +14,7 @@
                 @foreach ($route->trips->all() as $trip)
                     <tr>
                         <td>{{ $trip->id }}</td>
-                        <td>{!! link_to_route('trips.show', $trip->fullName(), $trip->id) !!}</td>
+                        <td>{!! link_to_route('admin.trips.show', $trip->fullName(), $trip->id) !!}</td>
                     </tr>
                 @endforeach
             @else

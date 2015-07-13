@@ -14,9 +14,7 @@
         </div>
     </div>
 
-    <form class="form-horizontal" method="POST" action="/password/email">
-
-        {!! csrf_field() !!}
+    {!! Form::open(['method' => 'POST', 'action' => ['Auth\PasswordController@postEmail'], 'class' => 'form-horizontal']) !!}
 
         <div class="form-group">
             <label class="control-label col-sm-2" for="email">Email</label>
@@ -34,6 +32,6 @@
             </div>
         </div>
 
-    </form>
+    {!! Form::close() !!}
 
 @stop

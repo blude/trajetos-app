@@ -5,8 +5,7 @@
 
     @include('errors._list')
 
-    {!! Form::open(['url' => 'trips']) !!}
+    {!! Form::open(['action' => 'TripsController@store']) !!}
         @include('trips._form', ['submitButtonText' => 'Criar Viagem'])
     {!! Form::close() !!}
-
 @stop

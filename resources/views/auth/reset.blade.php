@@ -6,9 +6,7 @@
 
     @include ('errors._list')
 
-    <form class="form-horizontal" method="POST" action="/password/reset">
-
-        {!! csrf_field() !!}
+    {!! Form::open(['method' => 'POST', 'action' => ['Auth\PasswordController@postReset'], 'class' => 'form-horizontal']) !!}
 
         <input type="hidden" name="token" value="{{ $token }}">
 
@@ -39,6 +37,6 @@
             </div>
         </div>
 
-    </form>
+    {!! Form::close() !!}
 
 @stop

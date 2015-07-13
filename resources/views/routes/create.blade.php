@@ -5,7 +5,7 @@
 
     @include('errors._list')
 
-    {!! Form::open(['url' => 'routes']) !!}
+    {!! Form::open(['action' => 'RoutesController@store']) !!}
         @include('routes._form', ['submitButtonText' => 'Criar Linha'])
     {!! Form::close() !!}
 @stop

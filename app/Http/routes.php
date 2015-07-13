@@ -18,16 +18,19 @@ Route::get('settings', 'PagesController@settings');
 
 Route::get('trajetos/{id}', 'TrajetosController@show');
 
-Route::resource('routes', 'RoutesController');
-Route::resource('trips', 'TripsController');
-Route::resource('points', 'PointsController');
-Route::resource('bus_stops', 'BusStopsController');
-Route::resource('landmarks', 'LandmarksController');
-Route::resource('landmark_categories', 'LandmarkCategoriesController');
-Route::resource('neighborhoods', 'NeighborhoodsController');
-Route::resource('street_views', 'StreetViewsController');
-Route::resource('turns', 'TurnsController');
-Route::resource('turn_directions', 'TurnDirectionsController');
+Route::group(['prefix' => 'admin'], function() {
+    Route::resource('routes', 'RoutesController');
+    Route::resource('trips', 'TripsController');
+    Route::resource('points', 'PointsController');
+    Route::resource('bus_stops', 'BusStopsController');
+    Route::resource('landmarks', 'LandmarksController');
+    Route::resource('landmark_categories', 'LandmarkCategoriesController');
+    Route::resource('neighborhoods', 'NeighborhoodsController');
+    Route::resource('street_views', 'StreetViewsController');
+    Route::resource('turns', 'TurnsController');
+    Route::resource('turn_directions', 'TurnDirectionsController');
+});
+
 
 /*
 |--------------------------------------------------------------------------

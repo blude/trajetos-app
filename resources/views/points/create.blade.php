@@ -5,7 +5,7 @@
 
     @include('errors._list')
 
-    {!! Form::open(['url' => 'points']) !!}
+    {!! Form::open(['action' => 'PointsController@store']) !!}
         @include('points._form', ['submitButtonText' => 'Criar Ponto'])
     {!! Form::close() !!}
 @stop

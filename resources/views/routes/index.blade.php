@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1>Linhas <a class="btn btn-primary" href="{{ route('routes.create') }}">Nova</a></h1>
+    <h1>Linhas <a class="btn btn-primary" href="{{ route('admin.routes.create') }}">Nova</a></h1>
     <table class="table table-striped">
         <thead>
             <tr>                
@@ -17,8 +17,8 @@
                     <tr data-route-id="{{ $route->id }}">
                         <td>{{ $route->id }}</td>
                         <td>{{ $route->number }}</td>
-                        <td>{!! link_to_route('routes.show', $route->name, $route->id) !!}</td>
-                        <td>{!! link_to_route('routes.edit', 'editar', $route->id) !!}</td>
+                        <td>{!! link_to_route('admin.routes.show', $route->name, $route->id) !!}</td>
+                        <td>{!! link_to_route('admin.routes.edit', 'editar', $route->id) !!}</td>
                     </tr>
                 @endforeach
             @else

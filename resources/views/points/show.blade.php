@@ -19,8 +19,8 @@
                 <td>{{ $point->lon }}</td>
                 <td>{{ $point->point_type->label }}</td>
                 <td>
-                    {!! link_to_route('points.show', 'ver', $point->id) !!} - 
-                    {!! link_to_route('points.edit', 'editar', $point->id) !!}
+                    {!! link_to_route('admin.points.show', 'ver', $point->id) !!} - 
+                    {!! link_to_route('admin.points.edit', 'editar', $point->id) !!}
                 </td>
             </tr>
         </tbody>

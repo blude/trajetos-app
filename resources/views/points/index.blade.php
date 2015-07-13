@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1>Pontos <a class="btn btn-primary" href="{{ route('points.create') }}">Novo</a></h1>
+    <h1>Pontos <a class="btn btn-primary" href="{{ route('admin.points.create') }}">Novo</a></h1>
     <table class="table table-striped">
         <thead>
             <tr>                
@@ -26,7 +26,9 @@
                                <div>{{ $trip->fullName() }}</div>
                             @endforeach
                         </td>
-                        <td>{!! link_to_route('points.show', 'ver', $point->id) !!} - {!! link_to_route('points.edit', 'editar', $point->id) !!}</td>
+                        <td>
+                            {!! link_to_route('admin.points.show', 'ver', $point->id) !!} -
+                            {!! link_to_route('admin.points.edit', 'editar', $point->id) !!}</td>
                     </tr>
                 @endforeach
             @else

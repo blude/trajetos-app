@@ -14,10 +14,8 @@
         </div>
     </div>
     
-    <form class="form-horizontal" method="POST" action="/auth/register">
+    {!! Form::open(['method' => 'POST', 'action' => ['Auth\AuthController@postRegister'], 'class' => 'form-horizontal']) !!}
         
-        {!! csrf_field() !!}
-
         <div class="form-group">
             <label class="col-sm-2 control-label" for="name">Nome</label>
             <div class="col-sm-6">
@@ -52,6 +50,6 @@
             </div>
         </div>
 
-    </form>
+    {!! Form::close() !!}
 
 @stop

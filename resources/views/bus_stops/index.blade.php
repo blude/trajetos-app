@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1>Paradas <a class="btn btn-primary" href="{{ route('bus_stops.create') }}">Nova</a></h1>
+    <h1>Paradas <a class="btn btn-primary" href="{{ route('admin.bus_stops.create') }}">Nova</a></h1>
     <table class="table table-striped">
         <thead>
             <tr>                
@@ -24,7 +24,10 @@
                         <td>{{ $bus_stop->reference }}</td>
                         <td>{{ $bus_stop->neighborhood->name }}</td>
                         <td>{{ $bus_stop->point->id }}</td>
-                        <td>{!! link_to_route('bus_stops.show', 'ver', $bus_stop->id) !!} - {!! link_to_route('bus_stops.edit', 'editar', $bus_stop->id) !!}</td>
+                        <td>
+                            {!! link_to_route('admin.bus_stops.show', 'ver', $bus_stop->id) !!} -
+                            {!! link_to_route('admin.bus_stops.edit', 'editar', $bus_stop->id) !!}
+                        </td>
                     </tr>
                 @endforeach
             @else
