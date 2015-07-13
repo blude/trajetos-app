@@ -14,8 +14,16 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('point_type_id', 'Tipo:') !!}
-    {!! Form::select('point_type_id', $point_types, null, ['class' => 'form-control', 'id' => 'point_type_id']) !!}
+    <p><strong>Tipo:</strong></p>
+
+    @foreach ($point_types as $id => $name)
+        <div class="radio">
+            <label>
+                {!! Form::radio('point_type_id', $id, null) !!}
+                {{ $name }}
+            </label>
+        </div>
+    @endforeach
 </div>
 
 <fieldset id="point_type_stop">
@@ -48,10 +56,7 @@
     $('#trip_list').select2({
         placeholder: 'Selecione uma linha',
     });
-    $('#point_type_id').select2({
-        placeholder: 'Selecione o tipo do ponto',
-        tags: true
-    });
+
     $('#neighborhood_id').select2({
         placeholder: 'Selecione um bairro'
     });
