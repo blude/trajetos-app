@@ -18,6 +18,26 @@
     {!! Form::select('point_type_id', $point_types, null, ['class' => 'form-control', 'id' => 'point_type_id']) !!}
 </div>
 
+<fieldset id="point_type_stop">
+    <legend>Detalhes</legend>
+    <div class="form-group">
+        {!! Form::label('number', 'Número:') !!}
+        {!! Form::text('number', null, ['class' => 'form-control']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('address', 'Endereço:') !!}
+        {!! Form::text('address', null, ['class' => 'form-control']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('reference', 'Referência:') !!}
+        {!! Form::text('reference', null, ['class' => 'form-control']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('neighborhood_id', 'Bairro:') !!}
+        {!! Form::select('neighborhood_id', $neighborhoods, null, ['class' => 'form-control', 'id' => 'neighborhood_id']) !!}
+    </div>
+</fieldset>
+
 <div class="form-action">
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary']) !!}
 </div>
@@ -31,6 +51,9 @@
     $('#point_type_id').select2({
         placeholder: 'Selecione o tipo do ponto',
         tags: true
+    });
+    $('#neighborhood_id').select2({
+        placeholder: 'Selecione um bairro'
     });
 </script>
 @stop

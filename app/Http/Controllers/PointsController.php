@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Point;
 use App\PointType;
 use App\Trip;
+use App\Neighborhood;
+use Input;
 use App\Http\Requests\PointRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -42,7 +44,9 @@ class PointsController extends Controller
      */
     public function create()
     {
-        return view('points.create');
+        $neighborhoods = Neighborhood::lists('name', 'id');
+
+        return view('points.create', compact('neighborhoods'));
     }
 
     /**
@@ -81,7 +85,9 @@ class PointsController extends Controller
      */
     public function edit(Point $point)
     {
-        return view('points.edit', compact('point'));
+        $neighborhoods = Neighborhood::lists('name', 'id');
+
+        return view('points.edit', compact('point', 'neighborhoods'));
     }
 
     /**
