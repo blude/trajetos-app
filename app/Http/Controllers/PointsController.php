@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Point;
-use App\PointType;
-use App\Trip;
 use App\Neighborhood;
 use App\Http\Requests\PointRequest;
 use App\Http\Requests;
@@ -59,7 +57,7 @@ class PointsController extends Controller
 
         $point->trips()->attach($request->input('trip_list'));
 
-        return redirect('points')->with([
+        return redirect('admin/points')->with([
             'flash_message' => 'Ponto criado',
             'flash_message_level' => 'success'
         ]);
@@ -101,7 +99,7 @@ class PointsController extends Controller
 
         $point->trips()->sync($request->input('trip_list'));
 
-        return redirect('points')->with([
+        return redirect('admin/points')->with([
             'flash_message' => 'Ponto atualizado',
             'flash_message_level' => 'success'
         ]);
@@ -117,7 +115,7 @@ class PointsController extends Controller
     {
         $point->delete();
 
-        return redirect('points')->with([
+        return redirect('admin/points')->with([
             'flash_message' => 'Ponto deletado.',
             'flash_message_level' => 'success'
         ]);

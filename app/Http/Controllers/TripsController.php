@@ -64,7 +64,7 @@ class TripsController extends Controller
     public function store(TripRequest $request) {
         Trip::create($request->all());
 
-        return redirect('trips')->with([
+        return redirect('admin/trips')->with([
             'flash_message' => 'Viagem adicionada',
             'flash_message_level' => 'success'
         ]);
@@ -92,7 +92,7 @@ class TripsController extends Controller
     public function update(Trip $trip, TripRequest $request) {
         $trip->update($request->all());
 
-        return redirect('trips');
+        return redirect('admin/trips');
     }
 
     /**
@@ -103,7 +103,7 @@ class TripsController extends Controller
     public function destroy(Trip $trip) {
         $trip->delete();
 
-        return redirect('trips')->with([
+        return redirect('admin/trips')->with([
             'flash_message' => 'Viagem deletada.',
             'flash_message_level' => 'success'
         ]);

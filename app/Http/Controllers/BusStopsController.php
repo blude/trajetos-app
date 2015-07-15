@@ -56,7 +56,7 @@ class BusStopsController extends Controller
     {
         $bus_stop = BusStop::create($request->all());
 
-        return redirect('bus_stops')->with([
+        return redirect('admin/bus_stops')->with([
             'flash_message' => 'Parada criada',
             'flash_message_level' => 'success'
         ]);
@@ -97,7 +97,7 @@ class BusStopsController extends Controller
     {
         $bus_stop->update($request->all());
 
-        return redirect('bus_stops');
+        return redirect('admin/bus_stops');
     }
 
     /**
@@ -110,7 +110,7 @@ class BusStopsController extends Controller
     {
         $bus_stop->delete();
 
-        return redirect('bus_stops')->with([
+        return redirect('admin/bus_stops')->with([
             'flash_message' => 'Parada deletada.',
             'flash_message_level' => 'success'
         ]);

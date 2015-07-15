@@ -60,7 +60,7 @@ class RoutesController extends Controller
     public function store(RouteRequest $request) {
         Route::create($request->all());
 
-        return redirect('routes')->with([
+        return redirect('admin/routes')->with([
             'flash_message' => 'Linha adicionada',
             'flash_message_level' => 'success'
         ]);
@@ -86,7 +86,7 @@ class RoutesController extends Controller
     public function update(Route $route, RouteRequest $request) {
         $route->update($request->all());
 
-        return redirect('routes');
+        return redirect('admin/routes');
     }
 
     /**
@@ -97,7 +97,7 @@ class RoutesController extends Controller
     public function destroy(Route $route) {
         $route->delete();
 
-        return redirect('routes')->with([
+        return redirect('admin/routes')->with([
             'flash_message' => 'Linha deletada.',
             'flash_message_level' => 'success'
         ]);
