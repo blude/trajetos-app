@@ -13,15 +13,6 @@ class Route extends Model
     ];
 
     /**
-    * Return the full name of the route, including it's number.
-    *
-    * @return string
-    */
-    public function fullName() {
-        return $this->number . ' - ' . $this->name;
-    }
-
-    /**
      * A route can have many trips.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -41,6 +32,15 @@ class Route extends Model
         static::deleted(function($route) {
             $route->trips()->delete();
         });
+    }
+
+    /**
+    * Return the full name of the route, including it's number.
+    *
+    * @return string
+    */
+    public function fullName() {
+        return $this->number . ' - ' . $this->name;
     }
 
 }
