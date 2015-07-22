@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePointsTable extends Migration
+class CreateCoordinatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,10 @@ class CreatePointsTable extends Migration
      */
     public function up()
     {
-        Schema::create('points', function (Blueprint $table) {
+        Schema::create('coordinates', function (Blueprint $table) {
             $table->increments('id');
             $table->double('lat', 15, 8);
             $table->double('lon', 15, 8);
-            $table->integer('point_type_id')->unsigned();
-            $table->foreign('point_type_id')->references('id')->on('point_types')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreatePointsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('points');
+        Schema::drop('coordinates');
     }
 }

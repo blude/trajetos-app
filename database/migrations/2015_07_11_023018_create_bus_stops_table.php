@@ -19,8 +19,8 @@ class CreateBusStopsTable extends Migration
             $table->string('reference');
             $table->integer('neighborhood_id')->unsigned();
             $table->foreign('neighborhood_id')->references('id')->on('neighborhoods')->onDelete('cascade');
-            $table->integer('point_id')->unsigned();
-            $table->foreign('point_id')->references('id')->on('points')->onDelete('cascade');
+            $table->integer('coordinate_id')->unsigned();
+            $table->foreign('coordinate_id')->references('id')->on('coordinates')->onDelete('cascade');
             $table->timestamps();
         });
     }

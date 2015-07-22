@@ -16,8 +16,8 @@ class CreateStreetViewsTable extends Migration
             $table->increments('id');
             $table->integer('heading');
             $table->integer('fov');
-            $table->integer('point_id')->unsigned();
-            $table->foreign('point_id')->references('id')->on('points')->onDelete('cascade');
+            $table->integer('coordinate_id')->unsigned();
+            $table->foreign('coordinate_id')->references('id')->on('coordinates')->onDelete('cascade');
             $table->timestamps();
         });
     }
