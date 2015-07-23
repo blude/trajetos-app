@@ -4,17 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Point;
+use App\Coordinate;
 use App\Neighborhood;
-use App\Http\Requests\PointRequest;
+use App\Http\Requests\CoordinateRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class PointsController extends Controller
+class CoordinatesController extends Controller
 {
 
     /**
-     * Create a new points controller instance.
+     * Create a new coordinates controller instance.
      *
      * @return void
      */
@@ -29,9 +29,9 @@ class PointsController extends Controller
      */
     public function index()
     {
-        $points = Point::all();
+        $coordinates = Coordinate::all();
 
-        return view('points.index', compact('points'));
+        return view('coordinates.index', compact('coordinates'));
     }
 
     /**
@@ -43,7 +43,7 @@ class PointsController extends Controller
     {
         $neighborhoods = Neighborhood::lists('name', 'id');
 
-        return view('points.create', compact('neighborhoods'));
+        return view('coordinates.create', compact('neighborhoods'));
     }
 
     /**
@@ -51,14 +51,14 @@ class PointsController extends Controller
      *
      * @return Response
      */
-    public function store(PointRequest $request)
+    public function store(CoordinateRequest $request)
     {
-        $point = Point::create($request->all());
+        $coordinate = Coordinate::create($request->all());
 
-        $point->trips()->attach($request->input('trip_list'));
+        $coordinate->trips()->attach($request->input('trip_list'));
 
-        return redirect('admin/points')->with([
-            'flash_message' => 'Ponto criado',
+        return redirect('admin/coordinates')->with([
+            'flash_message' => 'Coordenada criada',
             'flash_message_level' => 'success'
         ]);
     }
@@ -66,40 +66,40 @@ class PointsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  Point  $point
+     * @param  Coordinate  $coordinate
      * @return Response
      */
-    public function show(Point $point)
+    public function show(Coordinate $coordinate)
     {
-        return view('points.show', compact('point'));
+        return view('coordinates.show', compact('coordinate'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Point  $point
+     * @param  Point  $coordinate
      * @return Response
      */
-    public function edit(Point $point)
+    public function edit(Point $coordinate)
     {
         $neighborhoods = Neighborhood::lists('name', 'id');
 
-        return view('points.edit', compact('point', 'neighborhoods'));
+        return view('coordinates.edit', compact('point', 'neighborhoods'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  Point  $point
+     * @param  Coordinate  $coordinate
      * @return Response
      */
-    public function update(Point $point, PointRequest $request)
+    public function update(Coordinate $coordinate, CoordinateRequest $request)
     {
-        $point->update($request->all());
+        $coordinate->update($request->all());
 
-        $point->trips()->sync($request->input('trip_list'));
+        $coordinate->trips()->sync($request->input('trip_list'));
 
-        return redirect('admin/points')->with([
+        return redirect('admin/coordinates')->with([
             'flash_message' => 'Ponto atualizado',
             'flash_message_level' => 'success'
         ]);
@@ -108,15 +108,15 @@ class PointsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Point  $point
+     * @param  Coordinate  $coordinate
      * @return Response
      */
-    public function destroy(Point $point)
+    public function destroy(Coordinate $coordinate)
     {
         $point->delete();
 
-        return redirect('admin/points')->with([
-            'flash_message' => 'Ponto deletado.',
+        return redirect('admin/coordinates')->with([
+            'flash_message' => 'Coordenada deletada.',
             'flash_message_level' => 'success'
         ]);
     }

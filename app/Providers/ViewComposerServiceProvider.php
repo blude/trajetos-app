@@ -15,10 +15,10 @@ class ViewComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('points._form', function($view)
+        view()->composer('coordinates._form', function($view)
         {
             $view->with('trips', Trip::lists('name', 'id'));
-            $view->with('point_types', PointType::lists('label', 'id'));
+            $view->with('coordinate_types', CoordinateType::lists('name', 'id'));
         });
         
     }

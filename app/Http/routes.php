@@ -21,7 +21,7 @@ Route::get('trajetos/{id}', 'TrajetosController@show');
 Route::group(['prefix' => 'admin'], function() {
     Route::resource('routes', 'RoutesController');
     Route::resource('trips', 'TripsController');
-    Route::resource('points', 'PointsController');
+    Route::resource('coordinates', 'CoordinatesController');
     Route::resource('bus_stops', 'BusStopsController');
     Route::resource('landmarks', 'LandmarksController');
     Route::resource('landmark_categories', 'LandmarkCategoriesController');

@@ -28,8 +28,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $router->model('routes', 'App\Route');
         $router->model('trips', 'App\Trip');
-        $router->model('points', 'App\Point');
-        $router->model('point_types', 'App\PointType');
+        $router->model('coordinates', 'App\Coordinate');
+        $router->model('coordinate_types', 'App\CoordinateType');
         $router->model('bus_stops', 'App\BusStop');
         $router->model('landmarks', 'App\Landmark');
         $router->model('landmark_categories', 'App\LandmarkCategory');

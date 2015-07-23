@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1>Pontos <a class="btn btn-primary" href="{{ route('admin.points.create') }}">Novo</a></h1>
+    <h1>Coordenadas <a class="btn btn-primary" href="{{ route('admin.coordinates.create') }}">Nova</a></h1>
     <table class="table table-striped">
         <thead>
             <tr>                
@@ -14,21 +14,21 @@
             </tr>
         </thead>
         <tbody>
-            @unless ($points->isEmpty())
-                @foreach($points as $point)
-                    <tr data-point-id="{{ $point->id }}">
-                        <td>{{ $point->id }}</td>
-                        <td>{{ $point->lat }}</td>
-                        <td>{{ $point->lon }}</td>
-                        <td>{{ $point->point_type->label }}</td>
+            @unless ($coordinates->isEmpty())
+                @foreach($coordinates as $coordinate)
+                    <tr>
+                        <td>{{ $coordinate->id }}</td>
+                        <td>{{ $coordinate->lat }}</td>
+                        <td>{{ $coordinate->lon }}</td>
+                        <td>{{ $coordinate->coordinate_type->name }}</td>
                         <td>
-                            @foreach ($point->trips as $trip)
+                            @foreach ($coordinate->trips as $trip)
                                <div>{{ $trip->fullName() }}</div>
                             @endforeach
                         </td>
                         <td>
-                            {!! link_to_route('admin.points.show', 'ver', $point->id) !!} -
-                            {!! link_to_route('admin.points.edit', 'editar', $point->id) !!}</td>
+                            {!! link_to_route('admin.coordinates.show', 'ver', $coordinate->id) !!} -
+                            {!! link_to_route('admin.coordinates.edit', 'editar', $coordinate->id) !!}</td>
                     </tr>
                 @endforeach
             @else

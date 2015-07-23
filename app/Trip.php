@@ -22,12 +22,12 @@ class Trip extends Model
     }
 
     /**
-     * Get the points associated with the given trip.
+     * Get the coordinates associated with the given trip.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function points() {
-        return $this->belongsToMany('App\Point')->withTimestamps();
+    public function coordinates() {
+        return $this->belongsToMany('App\Coordinate')->withTimestamps();
     }
 
     /**
