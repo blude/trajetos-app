@@ -23,9 +23,13 @@ class RouteRequest extends Request
      */
     public function rules()
     {
+        if ($this->route('routes')) {
+            $routeId = $this->route('routes')->id;
+        }
+
         return [
             'name' => 'required|string|max:50',
-            'number' => 'required|alpha_num|unique:routes|max:5'
+            'number' => 'required|alpha_num|unique:routes,id'. isset($routeId) ?: ",$routeId" .'|max:5'
         ];
     }
 }
