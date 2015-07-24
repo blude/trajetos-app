@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1>Editar Ponto</h1>
+    <h1>Editar Coordenada</h1>
 
     @include('errors._list')
 

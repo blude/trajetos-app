@@ -16,10 +16,10 @@
 <div class="form-group">
     <p><strong>Tipo:</strong></p>
 
-    @foreach ($point_types as $id => $name)
+    @foreach ($coordinate_types as $id => $name)
         <div class="radio">
             <label>
-                {!! Form::radio('point_type_id', $id, null) !!}
+                {!! Form::radio('coordinate_type_id', $id, null) !!}
                 {{ $name }}
             </label>
         </div>

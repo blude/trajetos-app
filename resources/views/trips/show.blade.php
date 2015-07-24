@@ -13,19 +13,19 @@
             </tr>
         </thead>
         <tbody>
-            @unless ($trip->points->isEmpty())
-                @foreach($trip->points as $point)
-                    <tr data-point-id="{{ $point->id }}">
-                        <td>{{ $point->id }}</td>
-                        <td>{{ $point->lat }}</td>
-                        <td>{{ $point->lon }}</td>
-                        <td>{{ $point->point_type->label }}</td>
-                        <td>{!! link_to_route('admin.points.show', 'ver', $point->id) !!} - {!! link_to_route('admin.points.edit', 'editar', $point->id) !!}</td>
+            @unless ($trip->coordinates->isEmpty())
+                @foreach($trip->coordinates as $point)
+                    <tr>
+                        <td>{{ $coordinate->id }}</td>
+                        <td>{{ $coordinate->lat }}</td>
+                        <td>{{ $coordinate->lon }}</td>
+                        <td>{{ $coordinate->coordinate_type->label }}</td>
+                        <td>{!! link_to_route('admin.coordinates.show', 'ver', $coordinate->id) !!} - {!! link_to_route('admin.coordinates.edit', 'editar', $coordinate->id) !!}</td>
                     </tr>
                 @endforeach
             @else
                 <tr>
-                    <td class="text-center text-muted" colspan="5">Nenhum ponto cadastrado.</td>
+                    <td class="text-center text-muted" colspan="5">Nenhuma coordenada cadastrada.</td>
                 </tr>
             @endunless
         </tbody>

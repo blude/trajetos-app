@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Trip;
-use App\PointType;
+use App\CoordinateType;
 use Illuminate\Support\ServiceProvider;
 
 class ViewComposerServiceProvider extends ServiceProvider

@@ -1,7 +1,7 @@
 @extends('layouts.admin-sidebar')
 
 @section('content')
-    <h1>Ponto <small>#{{ $point->id }}</small></h1>
+    <h1>Coordenada <small>#{{ $coordinate->id }}</small></h1>
     <table class="table table-striped">
         <thead>
             <tr>                
@@ -13,14 +13,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr data-point-id="{{ $point->id }}">
-                <td>{{ $point->id }}</td>
-                <td>{{ $point->lat }}</td>
-                <td>{{ $point->lon }}</td>
-                <td>{{ $point->point_type->label }}</td>
+            <tr>
+                <td>{{ $coordinate->id }}</td>
+                <td>{{ $coordinate->lat }}</td>
+                <td>{{ $coordinate->lon }}</td>
+                <td>{{ $coordinate->point_type->label }}</td>
                 <td>
-                    {!! link_to_route('admin.points.show', 'ver', $point->id) !!} - 
-                    {!! link_to_route('admin.points.edit', 'editar', $point->id) !!}
+                    {!! link_to_route('admin.coordinate.show', 'ver', $coordinate->id) !!} - 
+                    {!! link_to_route('admin.coordinate.edit', 'editar', $coordinate->id) !!}
                 </td>
             </tr>
         </tbody>
@@ -29,9 +29,9 @@
 
 @section ('sidebar')
     <h2>Linhas</h2>
-    @unless ($point->trips->isEmpty())
+    @unless ($coordinate->trips->isEmpty())
         <ul>
-            @foreach ($point->trips->all() as $trip)
+            @foreach ($coordinate->trips->all() as $trip)
                 <li>{{ $trip->fullName() }}</li>
             @endforeach
         </ul>

@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1>Novo Ponto</h1>
+    <h1>Nova Coordenada</h1>
 
     @include('errors._list')
 
-    {!! Form::open(['action' => 'PointsController@store']) !!}
-        @include('points._form', ['submitButtonText' => 'Criar Ponto'])
+    {!! Form::open(['action' => 'CoordinatesController@store']) !!}
+        @include('coordinates._form', ['submitButtonText' => 'Criar Coordenada'])
     {!! Form::close() !!}
 @stop
