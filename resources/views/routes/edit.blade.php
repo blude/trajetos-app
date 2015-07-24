@@ -6,7 +6,7 @@
     @include('errors._list')
 
     {!! Form::model($route, ['method' => 'PATCH', 'action' => ['RoutesController@update', $route->id]]) !!}
-        @include('routes._form', ['submitButtonText' => 'Atualizar Linha'])
+        @include('routes._form', ['submitButtonText' => 'Atualizar Linha', 'numberReadonly' => 'readonly'])
     {!! Form::close() !!}
     <hr>
     {!! Form::open(['method' => 'DELETE', 'action' => ['RoutesController@destroy', $route->id]]) !!}

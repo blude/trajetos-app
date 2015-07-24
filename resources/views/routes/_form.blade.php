@@ -4,7 +4,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('number', 'Número:') !!}
-    {!! Form::text('number', null, ['class' => 'form-control']) !!}
+    {!! Form::text('number', null, ['class' => 'form-control', isset($numberReadonly) ? $numberReadonly : null ]) !!}
 </div>
 <div class="form-action">
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary']) !!}

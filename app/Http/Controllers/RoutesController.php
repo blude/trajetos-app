@@ -60,7 +60,7 @@ class RoutesController extends Controller
     public function store(RouteRequest $request) {
         Route::create($request->all());
 
-        return redirect('admin/routes')->with([
+        return redirect()->route('admin.routes.index')->with([
             'flash_message' => 'Linha adicionada',
             'flash_message_level' => 'success'
         ]);
@@ -84,9 +84,12 @@ class RoutesController extends Controller
      * @return Response
      */
     public function update(Route $route, RouteRequest $request) {
-        $route->update($request->all());
+        $route->update($request->except('number'));
 
-        return redirect('admin/routes');
+        return redirect()->route('admin.routes.index')->with([
+            'flash_message' => 'Linha atualizada',
+            'flash_message_level' => 'success'
+        ]);
     }
 
     /**
@@ -97,7 +100,7 @@ class RoutesController extends Controller
     public function destroy(Route $route) {
         $route->delete();
 
-        return redirect('admin/routes')->with([
+        return redirect()->route('admin.routes.index')->with([
             'flash_message' => 'Linha deletada.',
             'flash_message_level' => 'success'
         ]);
